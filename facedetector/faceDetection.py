@@ -1,12 +1,14 @@
-from ..imports import *
+from .proccessingUtil import ProcUtil
 
 
 class FaceDetector():
 
     def __init__(self):
+        self.utils = ProcUtil()
         pass
 
     def detect_single_face_data(self, path):
-        face_data = face_recognition.load_image_file(path)
-        face_encoding = face_recognition.face_encodings(face_data)[0]
-        face_recognition.batch_face_locations()
+        return self.utils.detect_face(path)
+
+    def preproccessVideo(self, path):
+        return self.utils.detect_faces_on_video_and_create_metadata(path)
