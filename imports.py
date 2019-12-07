@@ -4,3 +4,4 @@ import os
 import PIL as pil
 import face_recognition
 import json
+from model import student
